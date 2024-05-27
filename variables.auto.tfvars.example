@@ -1,0 +1,31 @@
+# variables.auto.tfvars
+euclid = {
+  node_name = "pve"
+  endpoint  = "https://<pve-endpoint>:8006"
+  insecure  = true
+}
+# variables.auto.tfvars
+# Api key from proxmox UI
+euclid_auth = {
+  username  = "<user>"
+#root@pam for default
+  api_token = "<user>@<domain>!tofu=<token>"
+}
+
+# variables.auto.tfvars
+vm_dns = {
+  domain  = "."
+  servers = ["1.1.1.1", "8.8.8.8"]
+}
+
+#vm variables
+vm_user      = "<user>"
+#mkpasswd --method=SHA-512 <PASSWORD>
+vm_password  = "<hash password>"
+#ssh-keygen -t ed25519 -C "nicola.manica@gmail.com"
+host_pub-key = "<content of public key>"
+
+k8s-version        = "1.30"
+cilium-cli-version = "0.16.4"
+worker_nodes       = 2 
+master_nodes       = 1 
